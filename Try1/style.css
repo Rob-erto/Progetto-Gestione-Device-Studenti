@@ -1,0 +1,200 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  color: #333;
+  text-align: center;
+  text-decoration: bolder;
+  text-transform: uppercase;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+#logo {
+  height: 10%;
+  position: fixed;
+  left: 5%;
+  top: 2.5%;
+  margin-right: 10px;
+}
+
+#logo:hover {
+  cursor: pointer;
+}
+
+/*.sidebar {
+  background-color: #f4f4f4;
+  width: 20%;
+  position: fixed;
+  height: 80%; /* Adjust sidebar height accordingly */
+  /*top: 15%; /* Match with header height */
+  /*left: 0;
+  padding: 1%;
+}*/
+
+main {
+  margin-left: 22%; /* Adjust to match sidebar width */
+  padding: 2%;
+  color: white;
+}
+
+footer {
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 3px;
+}
+
+h3:hover {
+  color: white;   
+  cursor: pointer;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+/* CSS FOR SIDEBAR */
+
+#sidebar {
+  position: fixed;
+  /*vertical-align: top;*/
+  width: 20%;
+  background-color: #f1f1f1;
+  padding: 1%;
+  /*float: left;*/
+  height: 80%;
+  top: 15%;
+  left: 0%;
+  border-right: 5px solid black;
+}
+
+/*.search-box {
+  margin-bottom: 20px;
+}*/
+
+#container {
+  height: 50vh;
+}
+
+.accordion, .search-box {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  text-decoration: bolder;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Aggiungi stile quando l'accordion è attivo */
+.active.accordion, .accordion:hover {
+  background-color: red;
+  color: lightgreen;
+}
+
+.active.search-box, .search-box:hover {
+  background-color: blue;
+  color: white;
+}
+
+.corsi{
+  padding: 0 18px;
+  background-color: red;
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border: none;
+  outline: none;
+}
+
+.cercaStud {
+  padding: 0 18px;
+  background-color: red;
+  display: none;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border: none;
+  outline: none;
+}
+
+
+/* MEDIA QUERY */
+
+@media only screen and (max-width: 1200px) 
+{
+  header 
+  {
+    flex-direction: column;
+    height: 20%;
+    text-align: right;
+  }
+
+  #logo {
+    /*width: 50%; /* Ad esempio, ridimensiona l'immagine al 50% della larghezza della finestra */
+    max-width: 300px; /* Imposta una larghezza massima per l'immagine */
+    height: auto;
+    width: auto;
+    left: 10%;
+    /*top: calc(20% - height);*/
+    align-items: center;
+    margin-right: 10px;
+  }
+
+  #sidebar
+  {
+    height: 70%;
+    position: fixed;
+    margin-top: auto;
+  }
+}
+
+@media only screen and (max-width: 850px) 
+{
+  header 
+  {
+    position: relative;
+    flex-direction: column;
+    justify-content: end;
+    height: 20%;
+  }
+
+  #logo 
+  {
+    /*width: 50%; /* Ad esempio, ridimensiona l'immagine al 50% della larghezza della finestra */
+    max-width: 200px; /* Imposta una larghezza massima per l'immagine */
+    height: auto;
+    width: auto;
+    position: relative;
+  }
+
+  #sidebar
+  {
+    height: 60%;
+    margin-top: 30%;
+  }
+}

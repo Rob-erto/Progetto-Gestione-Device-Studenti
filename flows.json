@@ -1,0 +1,176 @@
+[
+    {
+        "id": "bd57b65ec0c536a0",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d52c43f915bb9a49",
+        "type": "inject",
+        "z": "bd57b65ec0c536a0",
+        "name": "SELECT",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 120,
+        "wires": [
+            [
+                "75b971d66e8ed3a4"
+            ]
+        ]
+    },
+    {
+        "id": "75b971d66e8ed3a4",
+        "type": "function",
+        "z": "bd57b65ec0c536a0",
+        "name": "SELECT",
+        "func": "var topic;\n\ntopic = \"USE progdevstud;\"\ntopic = \"SELECT * FROM dispositivi\";\nmsg.topic = topic;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 120,
+        "wires": [
+            [
+                "518cdfd4d1a675c7"
+            ]
+        ]
+    },
+    {
+        "id": "bb98007157d5ca6e",
+        "type": "debug",
+        "z": "bd57b65ec0c536a0",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "fd8dfb0f44edc01b",
+        "type": "inject",
+        "z": "bd57b65ec0c536a0",
+        "name": "INSERT",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "8b5192ccacd42970"
+            ]
+        ]
+    },
+    {
+        "id": "8b5192ccacd42970",
+        "type": "function",
+        "z": "bd57b65ec0c536a0",
+        "name": "INSERT",
+        "func": "var topic;\nvar corso = \"Csec\";\ntopic = \"USE progdevstud\";\n/*topic = \"INSERT INTO studenti VALUES (1, \\\"\" + \n        corso + \"\\\", 1)\";*/\n\ntopic = \"INSERT INTO dispositivi VALUES (2, \\\"PC\\\", \\\"Si\\\", \\\"Portatile2\\\", 1)\";\n\nmsg.topic = topic;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "9f8a6da2086d0ae0"
+            ]
+        ]
+    },
+    {
+        "id": "9b4db7d3fb83ec3f",
+        "type": "debug",
+        "z": "bd57b65ec0c536a0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 770,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "518cdfd4d1a675c7",
+        "type": "mysql",
+        "z": "bd57b65ec0c536a0",
+        "mydb": "2236dfd1.c909e",
+        "name": "",
+        "x": 590,
+        "y": 120,
+        "wires": [
+            [
+                "bb98007157d5ca6e"
+            ]
+        ]
+    },
+    {
+        "id": "9f8a6da2086d0ae0",
+        "type": "mysql",
+        "z": "bd57b65ec0c536a0",
+        "mydb": "2236dfd1.c909e",
+        "name": "",
+        "x": 590,
+        "y": 180,
+        "wires": [
+            [
+                "9b4db7d3fb83ec3f"
+            ]
+        ]
+    },
+    {
+        "id": "2236dfd1.c909e",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "db": "progdevstud",
+        "tz": "",
+        "charset": ""
+    }
+]

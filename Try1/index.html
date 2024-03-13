@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./main.js"></script>
+  <title>Progetto DevStud</title>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="https://www.itsaltoadriatico.it/" target="_blank">
+        <img id="logo" src="../itsaaLogo.png">
+      </a>
+      <h1 id="prog">Progetto DevStud</h1>
+    </header>
+
+    <nav id="sidebar">
+      <div id="container">
+          <!--<h2>Corsi</h2>-->
+          <div id="accordion">
+              <button class="accordion" onclick="toggleAccordion('panel')">Corsi</button>
+              <div class="corsi" id="panel">
+                  <button>SoQu</button>
+                  <button>CleD</button>
+                  <button>FrEn</button>
+                  <button>WebA</button>
+                  <button>CSec</button>
+              </div>
+
+              <!--<div class="search-box">
+                  <label for="search">Cerca studente:</label>
+                  <input type="text" id="search" name="search" placeholder="Cod. studente...">
+                  <button type="button">Cerca</button>
+              </div>-->
+          </div>
+
+          <button class="search-box" onclick="toggleAccordion('panel2')">Cerca Studente</button>
+          <div class="cercaStud" id="panel2">
+            <input type="text" id="search" name="search" placeholder="Cod. studente...">
+            <button type="button">Cerca</button>
+          </div>
+      </div>
+  </nav>
+
+    <main>
+      <h2>Main Content</h2>
+      <!-- Put your main content here -->
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis deleniti nesciunt aperiam harum minus consequuntur sed atque sunt ullam amet magnam illo, nam porro ipsam earum! Laborum ducimus magnam aspernatur.</p>
+    </main>
+
+    <footer>
+      <label for="contact-us">
+        <h3 id="footer">Contact Us</h3>
+      </label>
+    </footer>
+  </div>
+</body>
+</html>

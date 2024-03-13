@@ -1,0 +1,104 @@
+#header {
+    vertical-align: top;
+    position: sticky;
+    height: max-content;
+    padding: 1%;
+    width: auto;
+    text-align: center;
+    font: bolder;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: darkgrey;
+    color: white;
+}
+
+#mainContent {
+    position: sticky;
+    vertical-align: top;
+    width: auto;
+    height: 83vh;
+    text-align: center;
+    margin-left: 20%;
+    background-color: yellow;
+    padding: 1.5%;
+}
+
+#container1 {
+    position: relative;
+    height: 80vh; /* Imposta l'altezza del contenitore come altezza della finestra */
+}
+
+#footer {
+    position: fixed;
+    bottom: 1%;
+    padding: 2px;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center; 
+}
+
+/* CODICE AGGIUNTO*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+}
+
+html {
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#sidebar {
+    position: sticky;
+    vertical-align: top;
+    width: 20%;
+    background-color: #f1f1f1;
+    padding: 1%;
+    float: left;
+    height: 100vh;
+    border-right: 5px solid black;
+}
+
+#search-box {
+    width: 20%;
+    margin-bottom: 20px;
+    align-items: end;
+}
+
+#container {
+    height: 50vh;
+}
+
+.accordion {
+    background-color: white;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/* Aggiungi stile quando l'accordion è attivo */
+.active, .accordion:hover {
+    background-color: red;
+    color: blue;
+}
